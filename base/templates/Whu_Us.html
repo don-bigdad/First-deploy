@@ -1,0 +1,21 @@
+ <!-- ======= Whu Us Section ======= -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why choose <span>Our Restaurant</span></h2>
+                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
+                    vitae autem.</p>
+            </div>
+            <div class="row">
+                {%for elem in about %}
+                    <div style="padding-bottom: 20px " class="col-lg-4">
+                        <div class="box">
+                            <span>{{ elem.pozition }}</span>
+                            <h4>{{elem.title}}</h4>
+                            <p>{{ elem.exactly_about_us }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

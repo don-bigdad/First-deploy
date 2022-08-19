@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block main %}
+    <section>
+        <table class="table table-light table-striped table-hover">
+            <tr class="table">
+                <td style="border-radius:20px;border:None ">Button</td>
+                <td style="border-radius:20px;border:None;width:200px">Name</td>
+                <td style="border-radius:20px;border:None;width:200px">Mail</td>
+                <td style="border-radius:20px;border:None;width:200px">Subject</td>
+                <td style="border-radius:20px;border:None">Text</td>
+            </tr>
+            {% for elem in unreview_message %}
+            <tr>
+            <td style="border-radius: 20px;border:none;width:90px;height: 100px">
+                <a  href="{% url "manager:update_contact" pk=elem.pk%}">
+                    <button style="border-radius:20px ;height: 50px;margin-top:20%" type="button" class="btn btn-primary">Done</button>
+                </a>
+                <td style="border-radius:20px;border:None;width:100px">{{ elem.name }}</td>
+                <td style="border-radius:20px;border:None;width:100px">{{ elem.email }}</td>
+                <td style="border-radius:20px;border:None;width:100px">{{ elem.subject }}</td>
+                <td style="border-radius:20px;border:None">{{ elem.text }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+{% endblock %}

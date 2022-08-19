@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: rgb(53, 53, 76);
+        }
+        .box {
+            width: 300px;
+            padding: 20px;
+            padding-top: 10px;
+            height: 310px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #191919;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+
+        }
+        a {
+            color: black;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 10%;
+            color: white;
+        }
+        input:hover {
+            background-color: gold;
+            color: black;
+            border: 2px solid rgb(225, 225, 225);
+        }
+        input {
+            color: white;
+            margin-bottom: 10px;
+            border-radius: 30px 30px 30px 30px;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            margin-top: 13px;
+            background-color: rgb(11, 11, 42);
+        }
+        a:hover{
+            color:gold;
+        }
+        :invalid{
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+{% for message in messages %}
+    <div class="alert alert-warning" role="alert">
+        {{ message}}
+    </div>
+{% endfor %}
+<h1>Registration Form</h1>
+    <form style="border-radius: 20px 20px 20px 20px;" class="box" method="POST" action="">
+        {% csrf_token %}
+        {{ form.username}}<br>
+        {{ form.password }}<br>
+        {{ form.repeat_password }}<br>
+        <input id="CreateUser" style="height: 60px;width: 130px;" type="submit" name="" value="Create User">
+    </form>
+    <p>
+        <a href="{% url "account:login"%}">Have an account?Click here to login</a> <br>
+    </p>
+</body>
+
+</html>

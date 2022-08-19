@@ -1,0 +1,44 @@
+<section id="book-a-table" class="book-a-table">
+    <div class="container">
+
+        <div class="section-title">
+          <h2>Book a <span>Table</span></h2>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+        <form action="" method="post" role="form">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                  {{ reservation_form.name }}
+
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                  {{ reservation_form.mail }}
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    {{reservation_form.phone}}
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                  {{ reservation_form.date }}
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    {{reservation_form.time}}
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                  {{ reservation_form.number_of_people }}
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                  {{reservation_form.text}}
+              </div>
+          <div class="text-center"><button style="margin-top: 10px" type="submit" class="btn btn-primary">Send Message</button></div>
+        </form>
+
+      </div>
+    </section>
