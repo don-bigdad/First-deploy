@@ -20,6 +20,8 @@ from django.urls import path, include
 from customer.views import response_customer
 from base.views import response_base
 
+
+
 urlpatterns = [
     path('account/',include("account.urls")),
     path('accounts/', include("account.urls")),
