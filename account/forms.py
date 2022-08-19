@@ -60,11 +60,3 @@ class UserLogin(forms.Form):
         "required":"",
         "id":"id_password",
     }))
-    def clean(self):
-        username = self.cleaned_data.get("username")
-        password = self.cleaned_data.get("password")
-        if username and password:
-            user = authenticate(username=username,password=password)
-            if not user or not user.check_password(password):
-                raise forms.ValidationError("Login or password is uncorrect")
-        return super().clean()

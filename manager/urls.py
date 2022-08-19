@@ -8,4 +8,5 @@ urlpatterns=[
     path("reservations/update/<int:pk>/",update_reservation,name="update_reservation"),
     path("contacts/",contact_func,name="contact_func"),
     path("contacts/update/<int:pk>/",update_contact,name="update_contact"),
+    path("",reservation_list,name="reservations_list"),
 ]

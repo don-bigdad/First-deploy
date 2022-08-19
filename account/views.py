@@ -11,9 +11,12 @@ def login_user(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
         user = authenticate(username=username,password=password)
-        login(request,user)
-        next_post = request.POST.get("next")
-        return redirect(next_get or next_post or "/")
+        if user is None:
+            messages.error(request,"Invalid password or username")
+        else:
+            login(request,user)
+            next_post = request.POST.get("next")
+            return redirect(next_get or next_post or "/")
     return render(request,"login.html",context={"form":form})
 def logout_user(request):
     logout(request)
